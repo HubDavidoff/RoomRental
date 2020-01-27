@@ -13,7 +13,7 @@ namespace MyRental.Core.Model
         public string Name { get; set; }
         public string Description { get; set; }
         [Range(10,300)]
-        public string Price { get; set; }
+        public decimal Price { get; set; }
         public string Type { get; set; }
         public string Image { get; set; }
     }

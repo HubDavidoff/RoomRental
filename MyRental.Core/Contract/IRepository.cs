@@ -1,7 +1,7 @@
 ﻿using MyRental.Core.Model;
 using System.Linq;
 
-namespace MyRental.DataAccess.InMemory
+namespace MyRental.Core.Contract
 {
     public interface IRepository<T> where T : BaseEntity
     {

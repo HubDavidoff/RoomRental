@@ -1,4 +1,5 @@
 ﻿using MyRental.Core.Model;
+using MyRental.Core.Contract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MyRental.DataAccess.InMemory
+
 {
     public class InMemoryRepository<T> : IRepository<T> where T : BaseEntity
     {
