@@ -48,6 +48,8 @@ namespace MyRental.WebUI
             // container.RegisterType<IProductRepository, ProductRepository>();
             container.RegisterType<IRepository<Room>, SQLRepository<Room>>();
             container.RegisterType<IRepository<RoomType>, SQLRepository<RoomType>>();
+            container.RegisterType<IRepository<Activities>, SQLRepository<Activities>>();
+
         }
     }
 }

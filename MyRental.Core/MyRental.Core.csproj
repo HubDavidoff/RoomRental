@@ -43,10 +43,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contract\IRepository.cs" />
+    <Compile Include="Model\Activities.cs" />
     <Compile Include="Model\BaseEntity.cs" />
     <Compile Include="Model\Room.cs" />
     <Compile Include="Model\RoomType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\RoomListViewModel.cs" />
     <Compile Include="ViewModel\RoomTypesViewModel.cs" />
   </ItemGroup>
   <ItemGroup />

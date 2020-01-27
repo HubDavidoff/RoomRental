@@ -17,6 +17,7 @@ namespace MyRental.DataAccess.SQL
 
         public DbSet<Room> Rooms { get; set; }
         public DbSet<RoomType> Types { get; set; }
+        public DbSet<Activities> Activities { get; set; }
 
     }
 }
