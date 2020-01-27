@@ -1,6 +1,7 @@
 using MyRental.Core.Contract;
 using MyRental.Core.Model;
 using MyRental.DataAccess.InMemory;
+using MyRental.DataAccess.SQL;
 using System;
 
 using Unity;
@@ -45,8 +46,8 @@ namespace MyRental.WebUI
 
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
-            container.RegisterType<IRepository<Room>, InMemoryRepository<Room>>();
-            container.RegisterType<IRepository<RoomType>, InMemoryRepository<RoomType>>();
+            container.RegisterType<IRepository<Room>, SQLRepository<Room>>();
+            container.RegisterType<IRepository<RoomType>, SQLRepository<RoomType>>();
         }
     }
 }

@@ -372,6 +372,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\RoomImages\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -386,6 +387,10 @@
     <ProjectReference Include="..\MyRental.DataAccess.InMemory\MyRental.DataAccess.InMemory.csproj">
       <Project>{08367F18-5657-47B9-B452-DEB355CA73B3}</Project>
       <Name>MyRental.DataAccess.InMemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyRental.DataAccess.SQL\MyRental.DataAccess.SQL.csproj">
+      <Project>{99CB434A-AE15-4636-BFCB-0616FF71A367}</Project>
+      <Name>MyRental.DataAccess.SQL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

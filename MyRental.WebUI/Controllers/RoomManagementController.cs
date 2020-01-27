@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.IO;
 
 namespace MyRental.WebUI.Controllers
 {
@@ -33,11 +34,15 @@ namespace MyRental.WebUI.Controllers
             return View(viewModel);
         }
         [HttpPost]
-        public ActionResult Create(Room room)
+        public ActionResult Create(Room room, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
-
+                if (file != null)
+                {
+                    room.Image = room.Id + Path.GetExtension(file.FileName);
+                    file.SaveAs(Server.MapPath("//Content//RoomImages//") + room.Image);
+                }
                 context.Insert(room);
                 context.Commit();
                 return RedirectToAction("Index");
@@ -63,7 +68,7 @@ namespace MyRental.WebUI.Controllers
             }
         }
         [HttpPost]
-        public ActionResult Edit(Room room, string Id)
+        public ActionResult Edit(Room room, string Id, HttpPostedFileBase file)
         {
             Room roomToEdit = context.Find(Id);
             if (roomToEdit != null)
@@ -72,7 +77,12 @@ namespace MyRental.WebUI.Controllers
                 {
                     return View(room);
                 }
-                else { 
+                else {
+                if (file != null)
+                {
+                    roomToEdit.Image = room.Id + Path.GetExtension(file.FileName);
+                    file.SaveAs(Server.MapPath("//Content//RoomImages//") + room.Image);
+                }
                 roomToEdit.Name = room.Name;
                 roomToEdit.Type = room.Type;
                 roomToEdit.Price = room.Price;

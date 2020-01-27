@@ -7,15 +7,15 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Create", "RoomManagement", FormMethod.Post, new { encType = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Room</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        
+
 
         <div class="form-group">
             @Html.LabelFor(model => model.Room.Name, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -51,8 +51,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Room.Image, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Room.Image, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Room.Image, "", new { @class = "text-danger" })
+                <input type="file" id="file" name="file" class="form-control" />
+
             </div>
         </div>
 
